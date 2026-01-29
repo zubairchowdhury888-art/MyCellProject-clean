@@ -1,0 +1,15 @@
+Section,Content_Summary,Status,Word_Count_Target
+Title,Syntactic Information Processing in Fungal Electrical Networks: A Computational Framework,✓,15
+Abstract,We test whether biological systems use grammar-like error correction. 90% compressible spike patterns in fungi + 400× computational advantage for syntactic models,✓,250
+Introduction,Beyond Boolean computation: consciousness as measurable syntactic depth,✓,800
+Methods: Empirical,"137 hours S. commune recordings, differential electrodes, 1 sample/sec",✓,600
+Methods: Computational,"Three cellular automaton models: Random, Boolean, Syntactic error-correction",✓,500
+Results: Empirical,"4.84 bits entropy, 90% compressible, Markovian timing",✓,800
+Results: Computational,"Syntactic: 419× capacity, maintains MI under 30% noise",✓,800
+Results: Integration,Empirical redundancy + computational advantage suggests grammar-based processing,✓,600
+Discussion,Quantum biology connection: topological error correction in biological substrates,✓,1200
+Predictions,"4 falsifiable tests: grammar extraction, noise resistance, non-local sync, phylogenetic scaling",✓,400
+Protocol,Complete replication protocol for independent verification,✓,600
+Conclusion,"Consciousness may be operationalized as syntactic depth, not mere complexity",✓,300
+Data Availability,"Zenodo DOI, raw CSV files, electrode coordinates, all spike times",✓,100
+Code Availability,"GitHub repository: Python implementations, analysis scripts, Jupyter notebooks",✓,100

@@ -1,0 +1,19 @@
+Category,Filename,Description,Size,Status
+Paper,Syntactic-Information-Processing-Fungi.pdf,"Main research paper (6,500 words)",225 KB,✅ Ready
+Raw Data,fungal_electrical_recording_137hrs.csv,137 hours voltage recordings (5 channels),42.2 MB,✅ Rename from paste.txt
+Spike Data,fast_spike_window.csv,395 detected spike events (59-min window),136 KB,✅ Ready
+Spike Analysis,spike_analysis_enhanced.csv,"Detailed spike metrics (amplitudes, ISIs)",<100 KB,✅ Ready
+Event Catalog,comprehensive_event_catalog.csv,All 42 events across full recording,<50 KB,✅ Ready
+Info Theory,week1-2_information_theory_analysis.csv,"Entropy, Kolmogorov, ISI analysis",<20 KB,✅ Ready
+Statistics,summary_statistics.csv,Key statistics for paper figures,<10 KB,✅ Ready
+Hourly Summary,hourly_event_summary.csv,Temporal distribution of events,<10 KB,✅ Ready
+Window Compare,window_comparison_summary.csv,Different analysis window results,<10 KB,✅ Ready
+CA Results,week3-4_noise_folding_results.csv,105 simulations (3 models × 7 noise × 5 trials),<100 KB,✅ Ready
+Model Compare,week3-4_model_comparison.csv,"Degradation rates, capacity advantage",<20 KB,✅ Ready
+Final Summary,week3-4_final_summary.csv,Refined CA analysis with capacity metrics,<20 KB,✅ Ready
+Protocol,week5-6_experimental_protocol.txt,Step-by-step replication protocol,<50 KB,✅ Ready
+README,README.txt,"File descriptions, usage instructions",10 KB,✅ Created
+License,LICENSE.txt,CC-BY-4.0 license text,5 KB,✅ Created
+Electrode Info,electrode_configuration.txt,Recording setup details,5 KB,✅ Created
+Python Deps,requirements.txt,Python package dependencies,<1 KB,✅ Created
+Code Package,analysis_scripts.zip,Complete Python analysis pipeline,12.2 KB,✅ Created

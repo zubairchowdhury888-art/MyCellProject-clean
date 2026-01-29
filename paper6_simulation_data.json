@@ -1,0 +1,51 @@
+{
+  "model_a": {
+    "model": "Classical_Local",
+    "branching_ratio": 0.021263251598284374,
+    "fidelity": 9.839060050819986,
+    "spike_variance": 25.672581496104872,
+    "n_hyphae_final": 49428
+  },
+  "model_b": {
+    "model": "Syntactic_Coupling",
+    "coupling_strength": 0.3,
+    "branching_ratio": 0.05057861940600469,
+    "fidelity": 5.134214836116553,
+    "spike_variance": 149.9210687434346,
+    "topology_score": 26.065223415833195,
+    "n_hyphae_final": 49428
+  },
+  "model_c": {
+    "model": "Ruliad_Sampling",
+    "n_threads": 5,
+    "branching_ratio": 0.050295379137331064,
+    "fidelity": 0.7427649325200502,
+    "spike_variance": 0.9146099596694548,
+    "topology_score": 25.999513376131464,
+    "coherence_score": 1.0933610508684537,
+    "n_hyphae_final": 49428
+  },
+  "correlation_analysis": {
+    "classical": {
+      "Corr_AB": 0.03999459879036033,
+      "interpretation": "local only"
+    },
+    "syntactic": {
+      "Corr_AB": 0.9549766169942557,
+      "interpretation": "nonlocal coupling"
+    },
+    "ruliad": {
+      "Corr_AB": 0.0846741610897739,
+      "interpretation": "local only"
+    }
+  },
+  "metadata": {
+    "date": "2025-12-28",
+    "author": "Zubair Chowdhury",
+    "manuscript_id": "BIOSYS-S-25-01456",
+    "python_version": "3.14.2",
+    "numpy_version": "2.4.0",
+    "random_seed_colony_a": 42,
+    "random_seed_colony_b": 142
+  }
+}

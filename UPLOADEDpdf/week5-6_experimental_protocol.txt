@@ -1,0 +1,127 @@
+
+================================================================================
+EXPERIMENTAL PROTOCOL FOR INDEPENDENT REPLICATION
+================================================================================
+
+TITLE: Testing Syntactic Information Processing in Fungal Networks
+
+OBJECTIVE: Verify whether Schizophyllum commune electrical spikes exhibit
+           grammar-like structure and noise-resistant information encoding
+
+MATERIALS:
+----------
+Biological:
+  • Schizophyllum commune strain H4-8 (Utrecht) or ATCC 38548
+  • S. commune minimal medium (SCMM): Dons et al. 1979 formulation
+  • 1.5% agar, 90mm Petri dishes
+
+Hardware:
+  • Iridium-coated stainless steel subdermal electrodes (Spes Medica)
+  • ADC-24 high-resolution data logger (Pico Technology) or 24-bit equivalent
+  • 30°C incubator with stable temperature (±0.5°C)
+  • Hot needle for creating electrode insertion holes
+
+Software:
+  • Python 3.8+ with numpy, pandas, scipy, matplotlib
+  • Data acquisition software (Pico SDK or equivalent)
+  • Analysis scripts (provided in GitHub repository)
+
+PROCEDURE:
+----------
+Day 1-3: Culture Preparation
+  1. Inoculate S. commune on SCMM agar plates
+  2. Incubate at 30°C in dark for 72 hours
+  3. Verify colony diameter >20mm before electrode insertion
+
+Day 3: Electrode Insertion
+  4. Using hot needle, melt 2-8 holes in Petri dish lid
+  5. Insert electrode pairs through holes until touching agar
+  6. Electrode spacing: 10mm within pairs, 20-30mm between pairs
+  7. Seal around electrodes with lab wax/parafilm
+  8. Return to incubator for 12-24 hour settling period
+
+Day 4-10: Continuous Recording
+  9. Connect electrodes to data logger (differential mode)
+  10. Configure acquisition: 1 sample/second, 24-bit resolution
+  11. Voltage range: ±78 mV (or nearest equivalent)
+  12. Record continuously for minimum 48 hours (96+ hours preferred)
+  13. Monitor for disconnections/artifacts
+
+ANALYSIS PIPELINE:
+------------------
+Step 1: Spike Detection (Python)
+  • Load raw voltage time series
+  • Calculate derivative: dV/dt
+  • Detect spikes: threshold dV/dt < -0.15 mV/s
+  • Filter false positives: minimum 30s separation
+  • Export spike times as CSV
+
+Step 2: Information Theory Metrics
+  • Shannon entropy: H = -Σ p(x) log₂ p(x)
+    - Calculate at windows: 5s, 10s, 30s, 60s
+    - Use binary spike/no-spike encoding
+
+  • Kolmogorov complexity (approximation):
+    - Compress spike train using gzip/zlib (level 9)
+    - K ≈ compressed_size / original_size
+
+  • Inter-spike interval (ISI) distribution:
+    - Histogram with auto-binning
+    - Calculate ISI entropy from bin probabilities
+
+Step 3: Markov Baseline Comparison
+  • Calculate empirical transition probabilities:
+    P(spike→spike), P(spike→no-spike), etc.
+  • Generate 20 Markov sequences using these probabilities
+  • Calculate entropy/complexity for each Markov sequence
+  • t-test: Compare actual vs Markov baseline (α=0.05)
+
+Step 4: Cellular Automaton Models (optional replication)
+  • Implement three 50×50 grid models:
+    1. Random: p(activation) = 0.1
+    2. Boolean: Conway-like majority voting
+    3. Syntactic: Triplet majority decoding
+  • Test noise levels: 0%, 5%, 10%, 15%, 20%, 25%, 30%
+  • Measure mutual information vs reference state
+  • Compare degradation rates
+
+EXPECTED RESULTS:
+-----------------
+If hypothesis is CORRECT:
+  ✓ Shannon entropy: 4-5 bits (10s window)
+  ✓ Kolmogorov complexity: 0.08-0.12 (85-95% compressible)
+  ✓ Markov test: p > 0.05 (statistically similar to baseline)
+  ✓ Syntactic model: >100× information capacity vs Boolean
+
+If hypothesis is INCORRECT:
+  ✗ Low entropy (<2 bits) indicating pure randomness
+  ✗ High complexity (>0.5) indicating no redundancy
+  ✗ Markov test: p < 0.05 (significantly different patterns)
+  ✗ Syntactic model: no advantage over Boolean baseline
+
+REPORTING REQUIREMENTS:
+-----------------------
+Please report ALL results, including null findings:
+  • Complete raw data (CSV with timestamps + voltages)
+  • Spike detection parameters used
+  • All statistical test results (including p-values)
+  • Deviations from protocol (electrode spacing, temperature, etc.)
+  • Negative controls (disconnected electrodes, etc.)
+
+DATA SHARING:
+-------------
+Suggested repositories:
+  • Zenodo (DOI assignment, permanent archive)
+  • GitHub (version-controlled code + small datasets)
+  • figshare (figures + supplementary materials)
+  • bioRxiv (preprint if extending analysis)
+
+LICENSE: CC-BY-4.0 (or equivalent open license)
+
+CONTACT FOR QUESTIONS:
+----------------------
+[Your name, email, website]
+GitHub: [your repo URL]
+Zenodo: [your DOI once assigned]
+
+================================================================================
